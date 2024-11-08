@@ -1,8 +1,8 @@
-const Book = require("../models/bookModel");
+const Book = require("../models/cardModel");
  
-async function updateAuthor(req,res) {
+async function updateCard(req,res) {
     try {
-       await Book.update(
+       await Card.update(
         {
             name: req.body.name
         },
@@ -11,11 +11,11 @@ async function updateAuthor(req,res) {
         },
         }
        )
-       res.status(200).json({message: `Book with title ${req.query.title} has been updated and the author is now ${req.body.author}!`});
+       res.status(200).json({message: `Card with name ${req.query.name} has been updated and the name is now ${req.body.name}!`});
     } catch (error) {
         console.log(error);
         res.status(500).json(error);
     }
 }
  
-module.exports = updateAuthor;
+module.exports = updateCard;

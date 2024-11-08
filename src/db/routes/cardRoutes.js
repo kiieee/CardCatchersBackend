@@ -2,23 +2,25 @@ const {Router} = require("express");
 const cardRouter = Router();
  
 
-const addCard = require("../bookControllers/addCard");
+const addCard = require("../cardControllers/addCard");
 
-const listAllCards = require("../bookControllers/listAllCards");
+const listAllCards = require("../cardControllers/listAllCards");
 
-const updateCard = require("../bookControllers/updateCard");
+const updateCard = require("../cardControllers/updateCard");
 
-const deleteCard = require("../bookControllers/deleteCard");
+const deleteCard = require("../cardControllers/deleteCard");
 
-const cardDetails = require("../bookControllers/cardDetails");
+const cardDetails = require("../cardControllers/cardDetails");
+
+const checkToken = require("../middleware/checkToken");
 
 // const deleteAllCards = require("../controllers/deleteAllCards");
  
-cardRouter.post("/addCard", addCard);
-cardRouter.get("/listAllCards", listAllCards);
-cardRouter.put("/updateCard", updateCard);
-cardRouter.delete("/deleteCard", deleteCard);
-// cardRouter.delete("deleteAllCards", deleteAllCards);
-cardRouter.get("/cardDetails", cardDetails);
+cardRouter.post("/addCard", checkToken, addCard);
+cardRouter.get("/listAllCards", checkToken, listAllCards);
+cardRouter.put("/updateCard", checkToken, updateCard);
+cardRouter.delete("/deleteCard", checkToken, deleteCard);
+// cardRouter.delete("deleteAllCards", checkToken, deleteAllCards);
+cardRouter.get("/cardDetails", checkToken, cardDetails);
 
 module.exports = cardRouter;
