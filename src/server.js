@@ -4,7 +4,10 @@ const app = express();
 const User = require("./db/models/userModel");
 const Card = require("./db/models/cardModel");
 const userRouter = require("./db/routes/userRoutes");
-const cardRouter = require("./db/routes/cardRoutes")
+const cardRouter = require("./db/routes/cardRoutes");
+const Col = require("./db/models/colModels");
+const ColDeet = require("./db/models/colDeets");
+const colRouter = require("./db/routes/colRoutes");
 require("dotenv").config();
 //This allows to access any variable stored in the .env file
 app.use(cors())
@@ -13,6 +16,9 @@ app.use(express.json());
 function syncTables() {
     User.sync({alter:true})
     Card.sync({alter:true})
+    Col.sync({alter:true})
+    ColDeet.sync({alter:true})
+
 };
 
 const port = process.env.PORT || 5001 ;
@@ -21,6 +27,7 @@ const port = process.env.PORT || 5001 ;
 // SQLconnection();
 app.use(userRouter);
 app.use(cardRouter);
+app.use(colRouter);
 app.get("/health", (req,res) => res.status(200).send("API is healthy"));
 
 syncTables();
