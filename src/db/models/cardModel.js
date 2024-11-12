@@ -21,6 +21,12 @@ const Card = connection.define("Card", {
         unique: false,
         allowNull: false,
 
+    },
+
+    game: {
+        type: DataTypes.STRING,
+        unique: false,
+        allowNull: false,
     }
 })
 
