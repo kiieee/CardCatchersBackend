@@ -2,7 +2,7 @@ const {Router} = require("express");
 const colRouter = Router();
  
 
-const addCol = require("../controllers/startCol");
+const addCol = require("../controllers/addCol");
 const deleteCol = require("../controllers/deleteCol");
 const getCol = require("../controllers/getCol")
 const checkToken = require("../middleware/checkToken");
