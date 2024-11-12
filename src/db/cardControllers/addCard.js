@@ -4,7 +4,7 @@ async function addCard(req,res) {
     try {
        await Card.create(
         {
-            name :req.body.name,
+            name :req.body.url,
         }
        )
 
