@@ -10,11 +10,18 @@ const Card = connection.define("Card", {
         primaryKey: true,
         autoIncrement: true
     },
+    url : {
+        type: DataTypes.STRING,
+        unique: false,
+        allowNull: false,
+
+    },
     name : {
         type: DataTypes.STRING,
         unique: false,
-        allowNull: false
-    },
+        allowNull: false,
+
+    }
 })
 
 module.exports = Card;
