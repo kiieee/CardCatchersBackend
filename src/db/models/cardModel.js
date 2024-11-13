@@ -27,6 +27,15 @@ const Card = connection.define("Card", {
         type: DataTypes.STRING,
         unique: false,
         allowNull: false,
+    },
+
+    //added/used by
+
+    
+    username: {
+        type: DataTypes.STRING,
+        unique: false,
+        allowNull: false,
     }
 })
 
