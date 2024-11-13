@@ -6,7 +6,8 @@ async function addCard(req,res) {
         {
             url :req.body.url,
             name : req.body.name,
-            game: req.body.game
+            game: req.body.game,
+            username : req.body.username
         }
        )
 
