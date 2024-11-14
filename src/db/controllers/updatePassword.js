@@ -5,7 +5,7 @@ const User = require ("../models/userModel");
 async function updatePassword(req,res) {
     try { 
         await User.update( {
-            username: req.body.password
+            password: req.body.password
         })
 
     } catch(error) {

@@ -5,7 +5,7 @@ const User = require ("../models/userModel");
 async function updateEmail(req,res) {
     try { 
         await User.update( {
-            username: req.body.email
+            email: req.body.email
         })
 
     } catch(error) {
