@@ -17,8 +17,8 @@ userRouter.post("/addUser", hashPassword, addUser)
 userRouter.get("/listAllUsers", checkToken, listAllUsers)
 userRouter.post("/login", checkPassword, login)
 
-userRouter.put("updateUsername", checkToken, updateUsername)
-userRouter.put("updateEmail", checkToken, updateEmail)
-userRouter.put("updatePassword", checkToken, updatePassword)
+userRouter.put("/updateUsername", checkToken, updateUsername)
+userRouter.put("/updateEmail", checkToken, updateEmail)
+userRouter.put("/updatePassword", checkToken, updatePassword)
 
 module.exports = userRouter;
