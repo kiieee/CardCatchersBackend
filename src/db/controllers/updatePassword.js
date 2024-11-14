@@ -12,7 +12,7 @@ async function updatePassword(req,res) {
             email: req.body.email
         }}
     )
-
+    res.status(200).json({message: `Password updated!`})
 
     } catch(error) {
         console.log(error);

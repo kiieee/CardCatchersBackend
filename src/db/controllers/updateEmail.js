@@ -12,6 +12,7 @@ async function updateEmail(req,res) {
             email: req.body.email
         }}
     )
+    res.status(200).json({message: `Updated email to ${req.body.newEmail}`})
 
     } catch(error) {
         console.log(error);

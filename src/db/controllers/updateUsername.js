@@ -12,6 +12,7 @@ async function updateUsername(req,res) {
             email: req.body.email
         }}
     )
+    res.status(200).json({message: `Updated username to ${req.body.newUsername}`})
 
     } catch(error) {
         console.log(error);
