@@ -6,11 +6,7 @@ async function updateUsername(req,res) {
     try { 
         await User.update( {
             username: req.body.username
-        },
-            { where: {
-                
-            password: req.body.password },
-    })
+        })
 
     } catch(error) {
         console.log(error);
