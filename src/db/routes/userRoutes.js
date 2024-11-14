@@ -19,6 +19,6 @@ userRouter.post("/login", checkPassword, login)
 
 userRouter.put("/updateUsername", checkToken, updateUsername)
 userRouter.put("/updateEmail", checkToken, updateEmail)
-userRouter.put("/updatePassword", checkToken, updatePassword)
+userRouter.put("/updatePassword", checkToken, hashPassword, updatePassword)
 
 module.exports = userRouter;

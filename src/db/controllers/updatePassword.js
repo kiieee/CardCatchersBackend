@@ -6,7 +6,7 @@ async function updatePassword(req,res) {
     try { 
         await User.update(
             {
-                password: req.body.newPassword
+                password: req.body.password
             }, {
         where: {
             email: req.body.email
