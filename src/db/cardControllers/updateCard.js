@@ -1,4 +1,4 @@
-const Book = require("../models/cardModel");
+const Card = require("../models/cardModel");
  
 async function updateCard(req,res) {
     try {

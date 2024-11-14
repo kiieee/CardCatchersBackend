@@ -1,6 +1,6 @@
 require("dotenv").config();
 const jwt = require("jsonwebtoken");
-
+ 
 function login(req,res) {
     try {
         const privateKey = process.env.JWT_SECRET_KEY
@@ -23,5 +23,5 @@ function login(req,res) {
         res.status(500).json(error)
     }
 }
-
-module.exports = login; 
+ 
+module.exports = login;
