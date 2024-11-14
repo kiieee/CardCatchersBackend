@@ -4,9 +4,12 @@ const User = require ("../models/userModel");
 
 async function updatePassword(req,res) {
     try { 
-        await User.update( {
+        await User.update(
+            {
+                password: req.body.newPassword
+            }, {
         where: {
-            password: req.body.password
+            email: req.body.email
         }}
     )
 

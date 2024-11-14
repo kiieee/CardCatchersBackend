@@ -4,9 +4,12 @@ const User = require ("../models/userModel");
 
 async function updateUsername(req,res) {
     try { 
-        await User.update( {
+        await User.update(
+            {
+                username: req.body.newUsername
+            }, {
         where: {
-            username: req.body.username
+            email: req.body.email
         }}
     )
 

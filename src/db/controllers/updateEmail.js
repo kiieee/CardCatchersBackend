@@ -4,7 +4,10 @@ const User = require ("../models/userModel");
 
 async function updateEmail(req,res) {
     try { 
-        await User.update( {
+        await User.update(
+            {
+                email: req.body.newEmail
+            }, {
         where: {
             email: req.body.email
         }}
