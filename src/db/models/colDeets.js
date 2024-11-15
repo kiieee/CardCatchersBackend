@@ -1,3 +1,4 @@
+const { urlencoded } = require("express");
 const connection = require("../connection")
 const {DataTypes} = require("sequelize")
 
@@ -10,17 +11,17 @@ const ColDeet = connection.define("ColDeet", {
         primaryKey: true,
         autoIncrement: true
     },
-    colID : {
-        type: DataTypes.INTEGER,
-        allowNull: false
-    },
-    cardID : {
-        type: DataTypes.INTEGER,
-        allowNull: false
-    },
-    user_id : {
+    colName : {
         type: DataTypes.STRING,
         allowNull: false
+    },
+    url : {
+        type: DataTypes.STRING,
+        allowNull: false
+    },
+    username : {
+        type: DataTypes.STRING,
+        allowNull: false,
     }
 })
 

@@ -1,9 +1,14 @@
-const Col = require("../models/colDeets")
+
+const ColDeet = require("../models/colDeets")
  
-async function getColDeet(req,res) {
+async function addColDeet(req,res) {
     try {
-       const output = await Col.findAll(
-        {});
+       const output = await ColDeet.create(
+        {
+            username : req.body.username,
+            url: req.body.url,
+            colName: req.body.colName
+        });
        res.status(200).json(output)
     } catch (error) {
         console.log(error);
@@ -11,4 +16,4 @@ async function getColDeet(req,res) {
     }
 }
  
-module.exports = getColDeet;
+module.exports = addColDeet;

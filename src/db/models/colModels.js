@@ -12,9 +12,14 @@ const Col = connection.define("Col", {
     },
     colName : {
         type: DataTypes.STRING,
-        unique: false,
+        unique: true,
         allowNull: false
     },
+    colGame : {
+        type: DataTypes.STRING,
+        unique: false,
+        allowNull: false
+    }
 })
 
 module.exports = Col;
