@@ -18,6 +18,6 @@ const delColDeet = require("../controllers/deleteColDeet");
  colRouter.post("/addColDeet", checkToken, addColDeet);
  colRouter.get("/getColDeet", checkToken, getColDeet);
  colRouter.get("/listCols", checkToken, listCols);
- colRouter.delete("deleteColDeet",checkToken, delColDeet);
+ colRouter.delete("/deleteColDeet",checkToken, delColDeet);
 
 module.exports = colRouter;
