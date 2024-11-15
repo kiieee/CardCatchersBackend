@@ -19,6 +19,12 @@ const Col = connection.define("Col", {
         type: DataTypes.STRING,
         unique: false,
         allowNull: false
+    },
+        
+    username: {
+        type: DataTypes.STRING,
+        unique: false,
+        allowNull: false,
     }
 })
 
