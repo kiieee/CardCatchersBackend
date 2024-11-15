@@ -12,7 +12,7 @@ const Col = connection.define("Col", {
     },
     colName : {
         type: DataTypes.STRING,
-        unique: false,
+        unique: true,
         allowNull: false
     },
     colGame : {
